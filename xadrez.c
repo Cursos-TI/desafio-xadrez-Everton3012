@@ -1,8 +1,46 @@
 #include <stdio.h>
 
+void moverTorre(int casas)
+{
+    if (casas > 0)
+    {
+        printf("Torre - Frente\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverRainha(int casas)
+{
+    if (casas > 0)
+    {
+        printf("Rainha - Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+void moverBispo(int casas)
+{
+    if (casas > 0)
+    {
+        printf("Bispo - Direita e Esquerda\n");
+        moverBispo(casas - 1);
+    }
+}
+
 int main()
 {
 
+    printf("Recursivo \n");
+
+    printf("\n\n");
+    moverBispo(5);
+    printf("\n\n");
+    moverTorre(5);
+    printf("\n\n");
+    moverRainha(8);
+
+    printf("\n\n");
+    printf("Loops tradicionais \n\n");
     char bispo[10] = "Bispo";
     char rainha[10] = "Rainha";
     char torre[10] = "Torre";
